@@ -1,0 +1,25 @@
+:root {
+  /* NCC Brand Colors */
+  --primary: #1a3a6c;
+  --primary-dark: #0d2546;
+  --secondary: #2c5aa0;
+  --accent: #e63946;
+  
+  /* Text & Background */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-light: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --border: #dee2e6;
+  
+  /* Effects */
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  
+  /* Typography */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radius: 8px;
+  --container: 1200px;
+}

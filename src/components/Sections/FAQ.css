@@ -1,0 +1,8 @@
+.faq { padding: 70px 0; background: var(--bg-light); }
+.faq h2 { text-align: center; color: var(--primary); margin-bottom: 30px; }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--bg-white); margin-bottom: 15px; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.faq-q { width: 100%; padding: 18px 20px; text-align: left; font-size: 1.05rem; font-weight: 600; color: var(--primary); display: flex; justify-content: space-between; align-items: center; background: none; }
+.faq-q:hover { background: rgba(44,90,160,0.05); }
+.toggle { font-size: 1.4rem; color: var(--secondary); }
+.faq-a { padding: 0 20px 20px; color: var(--text-secondary); line-height: 1.7; }

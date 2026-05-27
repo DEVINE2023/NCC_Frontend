@@ -1,0 +1,6 @@
+.clients { padding: 60px 0; background: var(--bg-light); }
+.client-block { margin-bottom: 40px; }
+.client-block:last-child { margin-bottom: 0; }
+.client-block h2 { text-align: center; color: var(--primary); margin-bottom: 20px; font-size: 1.8rem; }
+.logo-strip { display: flex; gap: 20px; overflow-x: auto; padding: 10px 5px; }
+.logo-box { min-width: 140px; height: 70px; background: var(--bg-white); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); font-weight: 500; color: var(--primary); flex-shrink: 0; }

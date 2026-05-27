@@ -1,0 +1,10 @@
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--text-light);
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-content { max-width: 800px; margin: 0 auto; }
+.hero h2 { font-size: 2.4rem; margin-bottom: 15px; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95; }
+.hero-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }

@@ -1,0 +1,14 @@
+.services { padding: 70px 0; }
+.services h2 { text-align: center; color: var(--primary); margin-bottom: 30px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.service-card {
+  background: var(--bg-white);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-top: 3px solid var(--primary);
+  transition: var(--transition);
+}
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.service-card h3 { color: var(--primary); margin-bottom: 12px; }
+.service-card p { color: var(--text-secondary); font-size: 0.95rem; }

@@ -1,0 +1,9 @@
+.videos { padding: 60px 0; }
+.videos h2 { text-align: center; color: var(--primary); margin-bottom: 30px; }
+.videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
+.video-card { background: var(--bg-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
+.video-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.video-thumb { height: 140px; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; }
+.play { font-size: 2.5rem; color: white; opacity: 0.9; }
+.video-card h4 { padding: 15px 15px 5px; color: var(--primary); font-size: 1.05rem; }
+.channel { display: block; padding: 0 15px 15px; color: var(--text-secondary); font-size: 0.85rem; }

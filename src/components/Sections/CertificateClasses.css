@@ -1,0 +1,7 @@
+.cert-classes { padding: 70px 0; background: var(--bg-light); }
+.cert-classes h2 { text-align: center; color: var(--primary); margin-bottom: 30px; }
+.classes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.class-card { background: var(--bg-white); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--secondary); }
+.class-card h3 { color: var(--primary); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.class-meta p { margin: 6px 0; font-size: 0.95rem; }
+.class-desc { margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--border); color: var(--text-secondary); font-style: italic; }

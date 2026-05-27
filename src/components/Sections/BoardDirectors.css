@@ -1,0 +1,6 @@
+.board { padding: 60px 0; background: var(--bg-light); }
+.board h2 { text-align: center; color: var(--primary); margin-bottom: 30px; }
+.board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+.board-card { background: var(--bg-white); padding: 20px; border-radius: var(--radius); text-align: center; box-shadow: var(--shadow); }
+.board-card h4 { color: var(--primary); margin-bottom: 5px; }
+.role { color: var(--secondary); font-weight: 500; font-size: 0.9rem; }
