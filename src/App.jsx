@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
 import Hero from './components/Sections/Hero';
@@ -10,25 +12,36 @@ import VideoSection from './components/Sections/VideoSection';
 import FAQ from './components/Sections/FAQ';
 import NewsUpdates from './components/Sections/NewsUpdates';
 import ClientsPartners from './components/Sections/ClientsPartners';
+import DSCPurchase from './components/Sections/DSCPurchase';
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <main>
-        <Hero />
-        <FeatureCards />
-        <AboutUs />
-        <BoardDirectors />
-        <Services />
-        <CertificateClasses />
-        <VideoSection />
-        <FAQ />
-        <NewsUpdates />
-        <ClientsPartners />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <FeatureCards />
+                <AboutUs />
+                <BoardDirectors />
+                <Services />
+                <CertificateClasses />
+                <VideoSection />
+                <FAQ />
+                <NewsUpdates />
+                <ClientsPartners />
+              </>
+            } />
+            
+            <Route path="/renew-dsc" element={<DSCPurchase />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

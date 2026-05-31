@@ -31,7 +31,7 @@ export const SERVICES = [
 ];
 
 export const CERT_CLASSES = [
-  { cls: 'Class-1', assurance: 'Basic', app: 'Individual', desc: 'For signing emails only' },
+  { cls: 'Class-1', assurance: 'Basic', app: 'Individual', desc: 'For test purpose only.' },
   { cls: 'Class-2', assurance: 'Medium', app: 'Individual, Enterprise', desc: 'For signing email and documents with or without encryption' },
   { cls: 'Class-3', assurance: 'High', app: 'Individual, Enterprise', desc: 'For signing emails, documents, AD authentication, and app authentication (with/without encryption)' }
 ];
