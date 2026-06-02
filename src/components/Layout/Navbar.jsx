@@ -22,7 +22,7 @@ export default function Navbar() {
       
       const scrollPosition = window.scrollY + 100;
 
-      sections.forEach(section => {
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
@@ -30,14 +30,49 @@ export default function Navbar() {
           
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
+            return; // Stop after finding the first matching section
           }
         }
-      });
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
+
+  const scrollToSection = (id) => {
+    setIsOpen(false);
+    
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Small delay to allow navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const navbarHeight = 90;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const navbarHeight = 90;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
 
   const handleHomeClick = () => {
     setIsOpen(false);
@@ -78,7 +113,10 @@ export default function Navbar() {
                     <a 
                       href={`#${sectionId}`}
                       className={activeSection === sectionId ? 'active' : ''}
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(sectionId);
+                      }}
                     >
                       {item}
                     </a>

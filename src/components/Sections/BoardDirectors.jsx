@@ -1,6 +1,5 @@
 import { DIRECTORS } from '../../data/constants';
 import './BoardDirectors.css';
-
 export default function BoardDirectors() {
   return (
     <section className="board">
@@ -9,17 +8,24 @@ export default function BoardDirectors() {
         <div className="board-grid">
           {DIRECTORS.map((director, i) => (
             <div key={i} className="board-card">
-              {/* Photo Container - Put your photos here */}
               <div className="board-photo">
                 <img 
-                  src={`/assets/images/directors/${director.name.toLowerCase().replace(/\s+/g, '-')}.jpg`} 
+                  src={`${director.url}`}
                   alt={director.name}
                   onError={(e) => {
-                    e.target.style.display = 'none'; // Hide broken image
+                    e.target.onerror = null; // prevent infinite loop
+                    const initials = director.name
+                      .split(' ')
+                      .map(n => n[0])
+                      .join('')
+                      .toUpperCase()
+                      .slice(0, 2);
+                    
+                    // Reliable fallback (via.placeholder.com is down/unstable)
+                    e.target.src = `https://placehold.co/300x280/1a3a6c/ffffff?text=${initials}`;
                   }}
                 />
               </div>
-              
               <div className="board-info">
                 <h4>{director.name}</h4>
                 <span className="role">{director.role}</span>

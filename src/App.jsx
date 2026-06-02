@@ -5,6 +5,7 @@ import Footer from './components/Layout/Footer';
 import Hero from './components/Sections/Hero';
 import FeatureCards from './components/Sections/FeatureCards';
 import AboutUs from './components/Sections/AboutUs';
+import KnowledgeBase from './components/Sections/KnowledgeBase';
 import BoardDirectors from './components/Sections/BoardDirectors';
 import Services from './components/Sections/Services';
 import CertificateClasses from './components/Sections/CertificateClasses';
@@ -21,11 +22,13 @@ function App() {
         <Navbar />
         <main>
           <Routes>
+            {/* Home Page */}
             <Route path="/" element={
               <>
                 <Hero />
                 <FeatureCards />
                 <AboutUs />
+                <KnowledgeBase />
                 <BoardDirectors />
                 <Services />
                 <CertificateClasses />
@@ -35,8 +38,10 @@ function App() {
                 <ClientsPartners />
               </>
             } />
-            
+
+            {/* DSC Purchase Page */}
             <Route path="/renew-dsc" element={<DSCPurchase />} />
+            <Route path="/buy-dsc" element={<DSCPurchase />} />
           </Routes>
         </main>
         <Footer />

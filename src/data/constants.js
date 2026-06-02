@@ -1,7 +1,7 @@
 export const NAV_ITEMS = [
   'Home', 'About Us', 'Resource', 'Application Form', 
   'Brochure', 'Root Certificates', 'Test Certificates', 
-  'Softwares', 'Knowledge Base', 'Repository', 'Certificate', 'Support'
+  'Softwares', 'Knowledge Base', 'Certificate', 'Support'
 ];
 
 export const FEATURES = [
@@ -12,13 +12,13 @@ export const FEATURES = [
 ];
 
 export const DIRECTORS = [
-  { name: 'Biplav Man Singh', role: 'Chairman' },
-  { name: 'Deepak Bhandari', role: 'Director' },
-  { name: 'Kishor Pant', role: 'Director' },
-  { name: 'Trishakti Sundar Joshi', role: 'Director' },
-  { name: 'Navaraj Lamichhane', role: 'Director' },
-  { name: 'Purushottam Ghimire', role: 'Advisor' },
-  { name: 'Lochan Lal Amatya', role: 'Advisor' }
+  { name: 'Biplav Man Singh', url: '/assets/images/directors/Biplav-Man-Singh.jpeg', role: 'Chairman' },
+  { name: 'Deepak Bhandari', url: '/assets/images/directors/Deepak-Bhandari.jpeg', role: 'Director' },
+  { name: 'Kishor Pant', url: '/assets/images/directors/Kishor-Pant.jpeg', role: 'Director' },
+  { name: 'Trishakti Sundar Joshi', url: '/assets/images/directors/Trishakti-Sundar-Joshi.jpeg', role: 'Director' },
+  { name: 'Navaraj Lamichhane', url: '/assets/images/directors/Navaraj-Lamichhane.jpeg', role: 'Director' },
+  { name: 'Purushottam Ghimire', url: '/assets/images/directors/Purushottam-Ghimire.jpeg', role: 'Advisor' },
+  { name: 'Lochan Lal Amatya', url: '/assets/images/directors/Lochan-Lal-Amatya.jpeg', role: 'Advisor' }
 ];
 
 export const SERVICES = [

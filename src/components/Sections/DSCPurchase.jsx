@@ -67,7 +67,7 @@ const DSCPurchase = () => {
         <div className="classify-section">
           <h3>CLASSIFY</h3>
           <div className="classify-options">
-            {['Sign', 'Encrypt', 'Sign & Encrypt'].map((opt) => (
+            {['Sign', 'Sign & Encrypt'].map((opt) => (
               <button
                 key={opt}
                 className={`classify-btn ${classify === opt ? 'active' : ''}`}
@@ -83,7 +83,7 @@ const DSCPurchase = () => {
         <div className="years-section">
           <h3>YEARS</h3>
           <div className="years-options">
-            {[1, 2, 3].map((y) => (
+            {[1, 2].map((y) => (
               <button
                 key={y}
                 className={`year-btn ${years === y ? 'active' : ''}`}

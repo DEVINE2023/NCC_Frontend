@@ -23,7 +23,6 @@ export default function Footer() {
             <address>
               <p>Kathmandu, Nepal</p>
               <p><a href="mailto:support@cert.com.np">support@cert.com.np</a></p>
-              <p>+977 9802300374</p>
             </address>
           </div>
         </div>
