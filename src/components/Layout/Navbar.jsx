@@ -30,7 +30,7 @@ export default function Navbar() {
           
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
-            return; // Stop after finding the first matching section
+            return;
           }
         }
       }
@@ -45,7 +45,6 @@ export default function Navbar() {
     
     if (location.pathname !== '/') {
       navigate('/');
-      // Small delay to allow navigation to complete before scrolling
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
@@ -87,8 +86,16 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-container">
         <div className="logo" onClick={handleHomeClick} style={{ cursor: 'pointer' }}>
-          <h1>NCC</h1>
-          <span>Nepal Certifying Company</span>
+          {/* Company Logo - Correct Path */}
+          <img 
+            src="/assets/images/logo.jpeg" 
+            alt="NCC Logo" 
+            className="company-logo"
+          />
+          <div className="logo-text">
+            <h1>NCC</h1>
+            <span>Nepal Certifying Company</span>
+          </div>
         </div>
         
         <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
