@@ -36,11 +36,23 @@ export const CERT_CLASSES = [
   { cls: 'Class-3', assurance: 'High', app: 'Individual, Enterprise', desc: 'For signing emails, documents, AD authentication, and app authentication (with/without encryption)' }
 ];
 
+// 👇 THIS IS THE UPDATED VIDEOS SECTION 👇
 export const VIDEOS = [
-  { title: 'Digital Signature in Nepal', channel: 'OCC NEPAL' },
-  { title: 'How to use Digital IDs for Secure email?', channel: 'ICT Frame' },
-  { title: 'डिजिटल सिग्नेचर चलाउन वा नचलेमा के गर्ने?', channel: 'Prabidhi Kaa Kura' },
-  { title: 'Digital Signature Software Installation Part 1', channel: 'Prabidhi Kaa Kura' }
+  { 
+    title: 'Digital Signature in Nepal', 
+    channel: 'OCC NEPAL',
+    url: "https://www.youtube.com/watch?v=YRDxTJjFq4M" 
+  },
+  { 
+    title: 'How to use Digital IDs for Secure email?', 
+    channel: 'ICT Frame',
+    url: "https://www.youtube.com/watch?v=AbnzXa8Z-C8&t=3s" 
+  },
+  { 
+    title: 'डिजिटल सिग्नेचर चलाउन वा नचलेमा के गर्ने?', 
+    channel: 'Prabidhi Kaa Kura',
+    url: "https://www.youtube.com/watch?v=G6xssXTBgCg" // 👈 Replace with your YouTube link
+  }
 ];
 
 export const FAQS = [
