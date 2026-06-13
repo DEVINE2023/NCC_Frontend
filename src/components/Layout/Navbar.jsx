@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+// 1. Import Link from react-router-dom
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../../data/constants';
 import './Navbar.css';
 
@@ -16,10 +17,10 @@ export default function Navbar() {
     }
 
     const handleScroll = () => {
-      const sections = NAV_ITEMS.map(item => 
+      const sections = NAV_ITEMS.map(item =>
         item.toLowerCase().replace(/\s/g, '-')
       );
-      
+
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -27,7 +28,7 @@ export default function Navbar() {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             return;
@@ -42,7 +43,7 @@ export default function Navbar() {
 
   const scrollToSection = (id) => {
     setIsOpen(false);
-    
+
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
@@ -86,10 +87,9 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-container">
         <div className="logo" onClick={handleHomeClick} style={{ cursor: 'pointer' }}>
-          {/* Company Logo - Correct Path */}
-          <img 
-            src="/assets/images/logo.jpeg" 
-            alt="NCC Logo" 
+          <img
+            src="/assets/images/logo.jpeg"
+            alt="NCC Logo"
             className="company-logo"
           />
           <div className="logo-text">
@@ -97,7 +97,7 @@ export default function Navbar() {
             <span>Nepal Certifying Company</span>
           </div>
         </div>
-        
+
         <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           {isOpen ? '✕' : '☰'}
         </button>
@@ -109,7 +109,7 @@ export default function Navbar() {
               return (
                 <li key={i}>
                   {item === 'Home' ? (
-                    <a 
+                    <a
                       href="#"
                       onClick={handleHomeClick}
                       className={activeSection === 'home' ? 'active' : ''}
@@ -117,7 +117,7 @@ export default function Navbar() {
                       {item}
                     </a>
                   ) : (
-                    <a 
+                    <a
                       href={`#${sectionId}`}
                       className={activeSection === sectionId ? 'active' : ''}
                       onClick={(e) => {
@@ -131,6 +131,17 @@ export default function Navbar() {
                 </li>
               );
             })}
+
+            {/* --- 2. ADDED RENEW DSC BUTTON HERE --- */}
+            <li>
+              <Link
+                to="/renew-dsc"
+                className="renew-dsc-btn"
+                onClick={() => setIsOpen(false)} // Closes mobile menu when clicked
+              >
+                Renew your DSC
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

@@ -1,6 +1,227 @@
-.clients { padding: 60px 0; background: var(--bg-light); }
-.client-block { margin-bottom: 40px; }
-.client-block:last-child { margin-bottom: 0; }
-.client-block h2 { text-align: center; color: var(--primary); margin-bottom: 20px; font-size: 1.8rem; }
-.logo-strip { display: flex; gap: 20px; overflow-x: auto; padding: 10px 5px; }
-.logo-box { min-width: 140px; height: 70px; background: var(--bg-white); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); font-weight: 500; color: var(--primary); flex-shrink: 0; }
+.clients-partners-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--secondary, #059669);
+    /* <-- CHANGED THIS TO MATCH PARTNERS COLOR */
+    position: relative;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary, #3b82f6), var(--accent, #e63946));
+    border-radius: 3px;
+}
+
+.auto-scroll-container {
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.auto-scroll-container:last-child {
+    margin-bottom: 0;
+}
+
+.auto-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.auto-scroll-track {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    animation: scroll-left 30s linear infinite;
+}
+
+/* Pause animation on hover */
+.auto-scroll-wrapper:hover .auto-scroll-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-33.333% - 40px));
+    }
+}
+
+.scroll-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-wrapper {
+    background: white;
+    border-radius: 16px;
+    padding: 50px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 350px;
+    min-height: 200px;
+    border: 2px solid transparent;
+}
+
+.logo-wrapper:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary, #3b82f6);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.scroll-logo {
+    max-width: 100%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(30%);
+    transition: all 0.4s ease;
+}
+
+.logo-wrapper:hover .scroll-logo {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Partners Section Specific */
+.partners-section .section-title {
+    color: var(--secondary, #059669);
+}
+
+.partners-section .section-title::after {
+    background: linear-gradient(90deg, var(--secondary, #059669), var(--primary, #3b82f6));
+}
+
+.partners-section .logo-wrapper:hover {
+    border-color: var(--secondary, #059669);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .clients-partners-section {
+        padding: 80px 15px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+
+    .auto-scroll-track {
+        gap: 40px;
+        animation-duration: 25s;
+    }
+
+    .logo-wrapper {
+        padding: 40px 50px;
+        min-width: 300px;
+        min-height: 170px;
+    }
+
+    .scroll-logo {
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .auto-scroll-track {
+        gap: 30px;
+        animation-duration: 20s;
+    }
+
+    .logo-wrapper {
+        padding: 35px 40px;
+        min-width: 260px;
+        min-height: 150px;
+    }
+
+    .scroll-logo {
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-partners-section {
+        padding: 60px 10px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 35px;
+    }
+
+    .auto-scroll-track {
+        gap: 25px;
+        animation-duration: 15s;
+    }
+
+    .logo-wrapper {
+        padding: 30px 35px;
+        min-width: 220px;
+        min-height: 130px;
+        border-radius: 12px;
+    }
+
+    .scroll-logo {
+        max-height: 70px;
+    }
+}
+
+/* Add fade animation on page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auto-scroll-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.auto-scroll-container:nth-child(2) {
+    animation-delay: 0.2s;
+}

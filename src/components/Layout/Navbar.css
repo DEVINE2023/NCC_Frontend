@@ -5,20 +5,23 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
-  padding: 15px 20px;
-  max-width: 100%;
-  margin: 0 auto;
-  gap: 20px;
+  padding: 35px 20px;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  gap: 15px;
+  box-sizing: border-box;
 }
 
 /* ==================== COMPANY LOGO STYLES ==================== */
 .company-logo {
-  height: 62px;
+  height: 100px;
   width: auto;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -28,7 +31,7 @@
 .logo {
   display: flex !important;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-direction: row !important;
   flex-shrink: 0;
   cursor: pointer;
@@ -40,18 +43,18 @@
   justify-content: center;
 }
 
-.logo h1 { 
-  font-size: 1.95rem; 
-  margin: 0; 
+.logo h1 {
+  font-size: 2.8rem;
+  margin: 0;
   line-height: 1;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.logo span { 
-  font-size: 0.82rem; 
+.logo span {
+  font-size: 1.1rem;
   opacity: 0.95;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 /* NAVIGATION MENU CONTAINER */
@@ -59,44 +62,88 @@
   flex: 1;
   min-width: 0;
   overflow: hidden;
+  width: 100%;
 }
 
-/* SCROLLABLE LIST */
-.nav-menu ul { 
-  display: flex; 
+/* SCROLLABLE LIST - UPDATED WITH VISIBLE SCROLLBAR */
+.nav-menu ul {
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 5px;
-  padding: 5px 0;
+  gap: 8px;
+  /* Added bottom padding so scrollbar doesn't touch the edge */
+  padding: 5px 20px 12px 0;
   margin: 0;
   list-style: none;
-  
+  width: 100%;
+
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+
+  /* Firefox Scrollbar Styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1);
 }
 
+/* Chrome, Safari, Edge Scrollbar Styling */
 .nav-menu ul::-webkit-scrollbar {
-  display: none;
+  height: 6px;
+  /* Makes the scrollbar thin */
+}
+
+.nav-menu ul::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  /* Track background */
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.nav-menu ul::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  /* Scrollbar handle color */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.nav-menu ul::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+  /* Lighter when hovered */
 }
 
 /* INDIVIDUAL ITEMS */
 .nav-menu li {
   flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* LINKS & ANIMATIONS */
 .nav-menu a {
   color: var(--text-light);
-  padding: 10px 16px;
-  font-size: 0.9rem;
+  padding: 16px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  font-weight: 500;
   white-space: nowrap;
   display: block;
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+/* RENEW DSC BUTTON */
+.nav-menu li:last-child .renew-dsc-btn {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin-left: 10px !important;
+  text-align: center;
   border: 1px solid transparent;
 }
 
@@ -105,7 +152,8 @@
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 /* Hover Animation: Red Underline */
@@ -128,10 +176,10 @@
 }
 
 /* MENU TOGGLE (Mobile) */
-.menu-toggle { 
-  display: none; 
-  color: white; 
-  font-size: 1.8rem;
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -142,12 +190,13 @@
 @media (max-width: 1024px) {
   .nav-container {
     justify-content: space-between;
+    padding: 20px 20px;
   }
-  
-  .menu-toggle { 
-    display: block; 
+
+  .menu-toggle {
+    display: block;
   }
-  
+
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -157,72 +206,75 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border-top: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   .nav-menu.active {
     max-height: 100vh;
     overflow-y: auto;
   }
-  
+
   .nav-menu ul {
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: visible;
     padding: 20px;
-    gap: 15px;
-  }
-  
-  .nav-menu li {
-    width: 100%;
-  }
-  
-  .nav-menu a {
-    text-align: center;
-    padding: 15px;
-    background: rgba(255,255,255,0.05);
+    gap: 10px;
   }
 
-  /* Logo responsive */
-  .company-logo {
-    height: 52px;
+  .nav-menu li {
+    flex: none;
+    width: 100%;
   }
-  
+
+  .nav-menu a {
+    text-align: center;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .nav-menu li:last-child .renew-dsc-btn {
+    padding: 18px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+  }
+
+  .company-logo {
+    height: 70px;
+  }
+
   .logo h1 {
-    font-size: 1.75rem;
+    font-size: 2.2rem;
+  }
+
+  .logo span {
+    font-size: 0.95rem;
   }
 }
 
 /* Smooth Scroll for Anchor Links */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 140px;
 }
 
+/* Base Button Styles */
 .renew-dsc-btn {
   background: var(--accent);
   color: white !important;
-  padding: 10px 20px;
-  border-radius: var(--radius);
-  font-weight: 600;
+  border-radius: var(--radius, 8px);
   text-decoration: none;
   transition: all 0.3s ease;
-  display: inline-block;
-  margin-left: 10px;
 }
 
 .renew-dsc-btn:hover {
   background: #c1121f;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
-}
-
-@media (max-width: 768px) {
-  .renew-dsc-btn {
-    margin-left: 0;
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
-  }
+  z-index: 10;
 }

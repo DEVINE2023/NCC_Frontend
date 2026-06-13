@@ -1,7 +1,7 @@
 export const NAV_ITEMS = [
-  'Home', 'About Us', 'Resource', 'Application Form', 
+  'Home', 'About Us', 'Knowledge Base', 'Resource', 
   'Brochure', 'Root Certificates', 'Test Certificates', 
-  'Softwares', 'Knowledge Base', 'Certificate', 'Support'
+  'Softwares', 'Certificate', 'Support'
 ];
 
 export const FEATURES = [
